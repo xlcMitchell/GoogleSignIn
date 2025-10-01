@@ -1,6 +1,7 @@
 package com.example.googlesigni;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -88,7 +89,7 @@ public class YouTubePlayerActivity extends AppCompatActivity {
             Pattern compiledPattern = Pattern.compile(regex);
             Matcher matcher = compiledPattern.matcher(youTubeLinkWithoutProtocolAndDomain);
             if (matcher.find()) {
-                return url.replace(matcher.group(), "");
+                return matcher.group(0);
             }
         }
         return null;
@@ -110,6 +111,7 @@ public class YouTubePlayerActivity extends AppCompatActivity {
         if (matcher.find()) {
             return url.replaceFirst(youTubeUrlRegEx, "");
         }
+        Log.d("YOUTUBE_LINK",url);
         return url;
     }
 
@@ -119,7 +121,7 @@ public class YouTubePlayerActivity extends AppCompatActivity {
 
         // if they haven't and it's empty, load the default video
         if (urlstr.isEmpty()) {
-            videoId = "tBV-4ttoyvc";
+            videoId = "JzSeC5sFyT8";
         } else {
             // otherwise, get the videoID from the URL entered and store it in videoId
             videoId = extractVideoIdFromUrl(urlstr);
@@ -136,6 +138,7 @@ public class YouTubePlayerActivity extends AppCompatActivity {
 
     // Method to play the video in the Video Player
     private void playVideo(YouTubePlayer player) {
+        Log.d("YOUTUBE_LINK", videoId); //check id
         player.loadVideo(videoId, 0);
     }
 }
