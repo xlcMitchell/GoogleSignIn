@@ -1,41 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="15dp"
-    tools:context=".YouTubePlayerActivity">
-
-    <!-- Top row with username and avatar -->
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context=".YouTubePlayerActivity"
+    android:orientation="vertical" android:padding="15dp">
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        android:layout_width="match_parent" android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/userNameTV"
-            android:layout_width="0dp"
+            android:id="@+id/userNameTV" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="user" android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            android:text="User"
-            android:textSize="30sp"
-            android:textColor="@color/black" />
-
+            android:textSize="30sp" android:textColor="@color/black" />
         <ImageView
-            android:id="@+id/avatarImage"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:src="@drawable/ic_launcher_foreground"
-            android:contentDescription="User avatar"/>
+            android:id="@+id/avatarImage" android:layout_width="90dp"
+            android:layout_height="90dp" />
     </LinearLayout>
-
-    <!-- Divider line -->
     <View
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_width="match_parent" android:layout_height="3dp"
         android:background="@color/design_default_color_primary_dark"
         android:layout_marginBottom="10dp"/>
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/youtube_player_view"
+        android:layout_width="match_parent" android:layout_height="wrap_content" />
+    <View
+        android:layout_width="match_parent" android:layout_height="3dp"
+        android:background="@color/design_default_color_primary_dark"
+        android:layout_marginBottom="10dp" android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Enter YouTube Video URL" android:textSize="20sp"
+        android:textColor="@color/design_default_color_primary_dark"/>
+    <EditText
+        android:id="@+id/ytVideoUrlEt" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="YouTube Video URL"/>
+    <Button
+        android:id="@+id/ytPlayVideoBtn" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="Play Video"/>
 </LinearLayout>
