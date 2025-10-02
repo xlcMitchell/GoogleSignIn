@@ -2,6 +2,18 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
+//---Also Needed for YouTube Data Api---
+plugins {
+    //id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+//---                   ---
+
+//Build.gradle (project) file also updated
+//Added because of conflict with YouTube API
+configurations {
+    all*.exclude group: 'com.google.guava', module: 'guava-jdk5'
+}
 android {
     namespace 'com.example.googlesigni'
     compileSdk 36
@@ -50,4 +62,19 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
     implementation 'com.squareup.picasso:picasso:2.5.2' //to display user profile picture
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.0.0' //for youtube player
+
+    // Room persistence Library
+    implementation "androidx.room:room-runtime:2.5.1"
+    annotationProcessor "androidx.room:room-compiler:2.5.1"
+    //---YouTube API ---//
+    //configuration added because of conflicts
+    implementation 'pub.devrel:easypermissions:3.0.0'
+    implementation('com.google.api-client:google-api-client-android:1.22.0'){
+        exclude group: 'org.apache.httpcomponents'
+    }
+    implementation('com.google.apis:google-api-services-youtube:v3-rev183-1.22.0'){
+        exclude group: 'org.apache.httpcomponents'
+    }
+    //---YOUTUBE API END---//
+    implementation 'com.google.firebase:firebase-firestore' //firestore database
 }

@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--
+allows an app to access a user's list of accounts on a device
+    for example email or username associatid with google account
+    -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GoogleSignI">
+        <activity
+            android:name=".YouTubeApiRequestActivity"
+            android:exported="false" />
         <activity
             android:name=".YouTubePlayerActivity"
             android:exported="false" />

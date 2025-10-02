@@ -1,5 +1,6 @@
 package com.example.googlesigni;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -52,6 +53,7 @@ public class YouTubePlayerActivity extends AppCompatActivity {
         youTubePlayerView.setEnableAutomaticInitialization(false);;
         videoUrlEt = findViewById(R.id.ytVideoUrlEt);
         Button playBtn = findViewById(R.id.ytPlayVideoBtn);
+        Button youTubeApiBtn = findViewById(R.id.ytHttpRequestBtn);
 
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +61,17 @@ public class YouTubePlayerActivity extends AppCompatActivity {
                 playVideoButtonClick();
             }
         });
+
+        //----YOUTUBE API REQUEST----//
+        youTubeApiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),YouTubeApiRequestActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         //YoutubePlayer is a lifecycle aware widget
         //so he video only plays when it is visible

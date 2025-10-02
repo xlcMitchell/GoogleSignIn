@@ -37,4 +37,9 @@
     <Button
         android:id="@+id/ytPlayVideoBtn" android:layout_width="wrap_content"
         android:layout_height="wrap_content" android:text="Play Video"/>
+    <Button
+        android:id="@+id/ytHttpRequestBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get YouTube information"/>
 </LinearLayout>
