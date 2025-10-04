@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_margin="5dp" app:cardCornerRadius="10dp"
+    app:contentPadding="5dp" android:id="@+id/channelCard"
+    android:backgroundTint="#ffe9edc9">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/channelTitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textSize="30sp"
+            android:textAllCaps="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Title"/>
+        <TextView
+            android:id="@+id/channelSubscribersTv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:text="Subscribers"
+            android:textColor="@android:color/holo_red_dark"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="@+id/channelTitleTv"
+            app:layout_constraintTop_toBottomOf="@id/channelTitleTv"/>
+        <TextView
+            android:id="@+id/channelSubscribersTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:text="0"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:padding="5dp"
+            app:layout_constraintStart_toEndOf="@id/channelSubscribersTv1"
+            app:layout_constraintTop_toBottomOf="@id/channelTitleTv"
+            android:layout_marginStart="10dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

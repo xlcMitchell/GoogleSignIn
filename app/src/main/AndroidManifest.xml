@@ -19,6 +19,9 @@ allows an app to access a user's list of accounts on a device
         android:supportsRtl="true"
         android:theme="@style/Theme.GoogleSignI">
         <activity
+            android:name=".ChannelInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".YouTubeApiRequestActivity"
             android:exported="false" />
         <activity
